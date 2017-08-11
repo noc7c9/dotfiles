@@ -5,7 +5,7 @@ function! init#source(pattern, ...)
   " backup the existing wildignore setting
   if a:0
     let wildignore_backup = &wildignore
-    set wildignore=*.after.vim
+    let &wildignore = join(a:000, ',')
   endif
 
   " Find the files matching the pattern
