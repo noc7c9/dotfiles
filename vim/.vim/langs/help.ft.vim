@@ -1,5 +1,5 @@
-" quick to quit
-nnoremap <buffer> q :quit<cr>
+" quick quit
+nnoremap <buffer> qq :quit<cr>
 
 " mappings for the tag stack
 nnoremap <buffer> <cr> <c-]>
@@ -12,3 +12,8 @@ nnoremap <buffer> K 5k
 " get rid of unnecessary elements
 setlocal nocursorline nocursorcolumn
 setlocal colorcolumn=
+
+" show the relative number line but don't use the auto numberline toggling
+setlocal number
+setlocal relativenumber
+let w:auto_numberline = 0

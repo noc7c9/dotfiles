@@ -27,7 +27,8 @@ vnoremap gj j
 vnoremap gk k
 
 " make Y consistent with C and D (ie. don't include the newline)
-nnoremap Y y$
+" note: not nnoremap because of vim-yankstack
+nmap Y y$
 
 " remap K keyword lookup
 nnoremap K <nop>

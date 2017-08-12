@@ -7,7 +7,7 @@ augroup auto_numberline
   autocmd!
 
   autocmd vimenter,winnew * let w:auto_numberline = 1
-  autocmd filetype * let w:auto_numberline = &l:number || &l:relativenumber
+  autocmd filetype * let w:auto_numberline = &l:number && &l:relativenumber
 
   autocmd focuslost,winleave   * if exists('w:auto_numberline') && w:auto_numberline
                              \ |     setlocal norelativenumber

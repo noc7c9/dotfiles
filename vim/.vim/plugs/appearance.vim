@@ -3,16 +3,16 @@ Plug 'nathanaelkane/vim-indent-guides'
 
 " visible by default on guis
 " not on terms because it looks ugly
-if env#is_gui()
-  let g:indent_guides_enable_on_vim_startup = 1
-endif
+autocmd guienter * IndentGuidesEnable
 
 " stops vim-indent-guides from creating the toggle mapping
 nmap <silent> <nop> <Plug>IndentGuidesToggle
 
 " multicolor parens pairs
-" Plug 'luochen1990/rainbow'
-let g:rainbow_active = 1
+Plug 'luochen1990/rainbow'
+" inactive by default
+" note: the variable has to be defined for the plugin to be loaded at all
+let g:rainbow_active = 0
 
 " visible git diff in sign column
 Plug 'airblade/vim-gitgutter'

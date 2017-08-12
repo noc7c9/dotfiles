@@ -3,13 +3,13 @@ if !env#is_qt()
     finish
 endif
 
-function s:qt_settings()
-    " set font
-    GuiFont! Consolas:h10
-
-    " start maximized
-    call GuiWindowMaximized(1)
-endfunction
+" guienter event workaround
+" use the first triggering of the focusgained event instead
+augroup nvim_qt_guienter_workaround
+    autocmd!
+    autocmd focusgained * doautocmd <nomodeline> guienter
+                      \ | autocmd! nvim_qt_guienter_workaround
+augroup END
 
 " swapfiles can break nvim-qt
 " https://github.com/equalsraf/neovim-qt/issues/78
@@ -20,9 +20,15 @@ set noswapfile
 " change window title
 set title
 
-" the sleep hack is required to bypass the timing issues (waiting for gui to
-" initialize)
-autocmd vimenter * sleep 100m | call <sid>qt_settings()
+" initialize when gui is ready
+autocmd guienter * call <sid>qt_settings()
+function s:qt_settings()
+    " set font
+    GuiFont! Consolas:h10
+
+    " start maximized
+    call GuiWindowMaximized(1)
+endfunction
 
 " the shim's fullscreen toggling doesn't always properly restore maximized
 " status

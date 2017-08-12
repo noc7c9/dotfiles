@@ -1,12 +1,10 @@
 " s:colorscheme is the preferred one
 " s:backup_colorscheme is one that comes with vim
 let s:colorscheme = 'molokai'
-if env#is_gvim()
+if env#is_gui()
     let s:backup_colorscheme = 'desert'
-elseif env#is_term()
-    let s:backup_colorscheme = 'darkblue'
 else
-    let s:backup_colorscheme = 'default'
+    let s:backup_colorscheme = 'darkblue'
 endif
 
 function! s:SetColorscheme()

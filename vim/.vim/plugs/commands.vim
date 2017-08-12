@@ -33,3 +33,9 @@ Plug 'tpope/tpope-vim-abolish'
 
 " git wrapper
 Plug 'tpope/vim-fugitive'
+
+" pseudo-capslock
+Plug 'tpope/vim-capslock'
+
+" create visual region split windows
+Plug 'wellle/visual-split.vim'
