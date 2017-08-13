@@ -1,10 +1,14 @@
-if env#is_qt()
-    " this uses a modified fzf.vim that runs this function before writing the
-    " command to the batch file, meaning fzf will directly run conemu
+if env#is_win() && env#is_qt()
+    " this uses a modified fzf vim plugin that runs this function before passing
+    " the command to jobstart
+    " it makes neovim directly run conemu (fullscreen with the fzf config)
+    "
+    " diff:
+    "  - let cmd = 'start /wait cmd /c '.command
+    "  + let cmd = FZF_rewrite_command(command)
+    "    call jobstart(cmd, fzf)
+    "
     function! FZF_rewrite_command(command)
-        let prefix = "\"c:\\Program Files\\ConEmu\\ConEmu64.exe\" -nocloseconfirm -quitonclose -fs -config fzf -run"
-        let command = substitute(a:command, '\^"', '', 'g')
-        let command = prefix . " \"-cur_console:n " . command "\""
-        return command
+        return "\"c:\\Program Files\\ConEmu\\ConEmu64.exe\" -fs -config fzf -run -cur_console:n " . a:command
     endfunction
 endif
