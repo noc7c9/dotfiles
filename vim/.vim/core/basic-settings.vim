@@ -132,3 +132,6 @@ if has('cryptv')
     set cryptmethod=blowfish
   endif
 endif
+
+" always show sign column
+set signcolumn=yes

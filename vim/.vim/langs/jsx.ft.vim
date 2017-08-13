@@ -30,6 +30,7 @@ endfunction
 augroup javascript_jsx
     autocmd!
     " set comment string on every line change
+    " TODO: hook into commentary directly
     autocmd cursormoved <buffer> let &l:commentstring
         \= <SID>getContextSensitiveCommentString()
 augroup END

@@ -33,3 +33,8 @@ imap <m-p> <Plug>yankstack_substitute_older_paste
 nmap <m-n> <Plug>yankstack_substitute_newer_paste
 xmap <m-n> <Plug>yankstack_substitute_newer_paste
 imap <m-n> <Plug>yankstack_substitute_newer_paste
+
+" incremental search highlighting
+Plug 'haya14busa/incsearch.vim'
+let g:incsearch#do_not_save_error_message_history = 1
+let g:incsearch#magic = '\v' " very magic

@@ -39,3 +39,6 @@ Plug 'tpope/vim-capslock'
 
 " create visual region split windows
 Plug 'wellle/visual-split.vim'
+
+" unix command helpers
+Plug 'tpope/vim-eunuch'

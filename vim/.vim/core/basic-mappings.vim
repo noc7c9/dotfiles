@@ -5,6 +5,9 @@ let maplocalleader = "\<space>\<space>"
 " easier command line access
 nnoremap ; :
 vnoremap ; :
+" the reverse
+nnoremap : ;
+vnoremap : ;
 
 " don't exit visual mode while shifting
 " and also don't round indent
