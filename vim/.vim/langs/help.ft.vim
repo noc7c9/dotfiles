@@ -17,3 +17,6 @@ setlocal colorcolumn=
 setlocal number
 setlocal relativenumber
 let w:auto_numberline = 0
+
+" cursor should remain centered on the screen
+SetBufferLocal scrolloff=999

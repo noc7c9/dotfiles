@@ -62,3 +62,12 @@ nnoremap <c-l> <c-w>l
 
 " insert mode paste (ctrl-c in insert mode is mostly useless)
 inoremap <c-c> <c-r>+
+" same for commandline (ctrl-c is same as esc in commandline)
+cnoremap <c-c> <c-r>+
+
+" commandline history navigation
+cnoremap <m-k> <up>
+cnoremap <m-j> <down>
+
+" buffer switching
+nnoremap <leader>b :buffers<cr>:edit #

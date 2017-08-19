@@ -21,3 +21,11 @@ vnoremap ? ?\v
 
 " clear highlight mapping
 nnoremap <silent> <leader>/ :nohlsearch<cr>
+
+" * and # should always be case sensitive
+" and also not jump forward
+" BUG: if the match isn't a keyword ('iskeyword') then the \< and \> makes the
+"      match not work, but if you remove \< and \> then the keyword matches can
+"      match within bigger words (eg: bcd will match in abcdef)
+nnoremap * :execute '/\C\V\<' . escape(expand('<cword>'), '/?\') . '\>' <cr>N
+nnoremap # :execute '?\C\V\<' . escape(expand('<cword>'), '/?\') . '\>' <cr>N

@@ -13,14 +13,27 @@ set noswapfile
 set title
 
 " initialize when gui is ready
-autocmd guienter * call <sid>qt_settings()
-function! s:qt_settings()
+" trying repeatedly until the gui is actually initialized (maximized)
+autocmd guienter * call <sid>qt_initialize()
+function! s:qt_initialize()
     " set font
     GuiFont! Consolas:h10
 
     " start maximized
     call GuiWindowMaximized(1)
+
+    " keep trying to initialize if the window isn't maximized
+    if !exists('g:GuiWindowMaximized') || !g:GuiWindowMaximized
+        call timer_start(250, {_ -> <sid>qt_initialize()})
+    endif
 endfunction
+
+" also make a public command just in case the gui is ever screwed up
+command! ReinitializeNvimQt call <sid>qt_initialize()
+
+" whenever a file is opened, bring the gui to the front
+" works with remote opening
+autocmd bufenter * call GuiForeground()
 
 " the shim's fullscreen toggling doesn't always properly restore maximized
 " status
@@ -38,7 +51,7 @@ endfunction
 nnoremap <silent> <f11> :<c-u>call <sid>toggle_fullscreen()<cr>
 nnoremap <silent> <c-f11> :<c-u>call GuiWindowMaximized(!g:GuiWindowMaximized)<cr>
 
-" guienter event workaround
+" guienter event workaround, since nvim-qt doesn't trigger it
 " use the first triggering of the focusgained event instead
 augroup nvim_qt_guienter_workaround
     autocmd!

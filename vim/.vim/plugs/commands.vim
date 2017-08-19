@@ -15,10 +15,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 " comment toggle maps
 Plug 'tpope/vim-commentary'
 
-" improved integration with environment
-Plug 'xolox/vim-misc' " dependency
-Plug 'xolox/vim-shell'
-
 " visualized undo tree
 Plug 'sjl/gundo.vim'
 " silent! is necessary to avoid the 'opened buffer' messages

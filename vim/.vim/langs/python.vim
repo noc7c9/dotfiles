@@ -1,10 +1,11 @@
 Plug 'davidhalter/jedi-vim'
 
-let g:jedi#force_py_version = 3
+" syntax folding for python
+Plug 'tmhedberg/SimpylFold'
 
 if env#is_neovim()
     Plug 'zchee/deoplete-jedi'
 
-    " disable jedi-vim's completions, use deoplete instead
-    let g:jedi#completions_enabled = 0
+    " don't let jedi initialize, instead opt to setup things manually
+    let g:jedi#auto_initialization = 0
 endif
