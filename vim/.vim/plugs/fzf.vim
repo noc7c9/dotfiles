@@ -4,5 +4,5 @@ Plug 'junegunn/fzf.vim'
 nnoremap <leader>b :Buffers<cr>
 let g:fzf_buffers_jump = 1
 
-nnoremap <leader>f :Files<space>
+nnoremap <leader>f :Files<cr>
 nnoremap <leader>g :Ag<space>

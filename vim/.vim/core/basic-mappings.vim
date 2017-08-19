@@ -71,3 +71,6 @@ cnoremap <m-j> <down>
 
 " buffer switching
 nnoremap <leader>b :buffers<cr>:edit #
+
+" sister map to J, shadows S but a simple alternative is cc
+nnoremap S r<cr>
