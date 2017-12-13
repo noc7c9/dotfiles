@@ -9,10 +9,10 @@ augroup auto_numberline
   autocmd vimenter,winnew * let w:auto_numberline = 1
   autocmd filetype * let w:auto_numberline = &l:number && &l:relativenumber
 
-  autocmd focuslost,winleave   * if exists('w:auto_numberline') && w:auto_numberline
-                             \ |     setlocal norelativenumber
-                             \ | endif
-  autocmd focusgained,winenter * if exists('w:auto_numberline') && w:auto_numberline
-                             \ |     setlocal relativenumber
-                             \ | endif
+  autocmd focuslost,winleave,bufwinleave   * if get(w:, 'auto_numberline', 0)
+                                         \ |     setlocal norelativenumber
+                                         \ | endif
+  autocmd focusgained,winenter,bufwinenter * if get(w:, 'auto_numberline', 0)
+                                         \ |     setlocal relativenumber
+                                         \ | endif
 augroup END
