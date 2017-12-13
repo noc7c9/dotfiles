@@ -24,3 +24,16 @@ set nocindent
 " when smart indent is on (typical for c-like languages)
 " don't treat automatically put # on the first column, follow indent level
 inoremap # X#
+
+" commands for adjusting indentation rules manually
+" source: https://github.com/romainl/minivimrc
+command! -nargs=1 IndentSpaces execute "setlocal tabstop=" . <args>
+                             \ . " shiftwidth=" . <args>
+                             \ . " softtabstop=" . <args>
+                             \ . " expandtab"
+                             \ | setlocal ts? sw? sts? et?
+command! -nargs=1 IndentTabs execute "setlocal tabstop=" . <args>
+                           \ . " shiftwidth=" . <args>
+                           \ . " softtabstop=" . <args>
+                           \ . " noexpandtab"
+                           \ | setlocal ts? sw? sts? et?
