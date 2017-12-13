@@ -29,3 +29,7 @@
     # http://blog.blindgaenger.net/advanced_git_aliases.html
     this = !git init && git add . && git commit -m \"Initial commit\"
     ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo >> .gitignore
+[core]
+    # TODO: need to make this cross platform, simply using vim uses git's vim
+    # copy
+    editor = 'c:/Program Files (x86)/Vim/vim80/Vim.exe'
