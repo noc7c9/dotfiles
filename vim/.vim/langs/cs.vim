@@ -9,5 +9,5 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 let g:OmniSharp_selector_ui = 'fzf'
 
 if env#is_neovim()
-    Plug 'https://gitlab.com/mixedCase/deoplete-omnisharp.git'
+    " Plug 'https://gitlab.com/mixedCase/deoplete-omnisharp.git'
 endif
