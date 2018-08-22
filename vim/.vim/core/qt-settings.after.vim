@@ -7,7 +7,7 @@ endif
 " https://github.com/equalsraf/neovim-qt/issues/78
 " the startup error message if two instances edit a file will definitely trigger
 " the issue, so don't bother at all
-set noswapfile
+" set noswapfile
 
 " change window title
 set title

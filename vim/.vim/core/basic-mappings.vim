@@ -33,6 +33,10 @@ vnoremap gk k
 " note: not nnoremap because of vim-yankstack
 nmap Y y$
 
+" swap lines up/down
+nnoremap <m-j> :m+<cr>
+nnoremap <m-k> :m-2<cr>
+
 " remap K keyword lookup
 nnoremap K <nop>
 vnoremap K <nop>

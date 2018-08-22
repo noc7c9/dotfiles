@@ -37,3 +37,6 @@ imap <m-n> <Plug>yankstack_substitute_newer_paste
 " incremental search highlighting
 Plug 'haya14busa/incsearch.vim'
 let g:incsearch#do_not_save_error_message_history = 1
+
+" automatically detect indent settings
+Plug 'tpope/vim-sleuth'
