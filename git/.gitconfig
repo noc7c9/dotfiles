@@ -11,8 +11,8 @@
     aa = add .
     x = commit
     xa = commit -a
-    d = "!f() { git diff $@; }; f"
-    ds = "!f() { git d --staged $@; }; f"
+    d = diff
+    ds = diff --staged
 
     # http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
     l = log -n 5 --graph --format=format:'%C(bold cyan)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)<%an>%C(reset)%C(auto)%d%C(reset)%n%C(white)%s%C(reset)%n'
@@ -30,6 +30,7 @@
     this = !git init && git add . && git commit -m \"Initial commit\"
     ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo >> .gitignore
 [core]
-    # TODO: need to make this cross platform, simply using vim uses git's vim
-    # copy
-    editor = 'c:/Program Files (x86)/Vim/vim80/Vim.exe'
+    editor = 'nvim'
+    excludesfile = ~/.gitignore_global
+[credential]
+    helper = manager
