@@ -38,3 +38,5 @@ if exists('g:loaded_commentary') && g:loaded_commentary
     augroup END
 
 endif
+
+let b:ale_fixers = ['eslint']
