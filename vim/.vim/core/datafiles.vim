@@ -17,7 +17,7 @@ set undofile
 let &undodir = s:root_dir . 'undo'
 
 " swapfiles
-let &directory = s:root_dir . 'swap'
+let &directory = s:root_dir . 'swap//'
 
 " make sure all the directories exist
 if empty(glob(&undodir))
