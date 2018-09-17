@@ -8,6 +8,9 @@ endfunction
 function! env#is_linux()
     return has('unix') && !has('macunix') && !has('win32unix')
 endfunction
+function! env#is_mac()
+    return has('mac')
+endfunction
 
 function! env#is_neovim()
     return has('nvim')

@@ -34,8 +34,13 @@ vnoremap gk k
 nmap Y y$
 
 " swap lines up/down
-nnoremap <m-j> :m+<cr>
-nnoremap <m-k> :m-2<cr>
+if env#is_mac()
+    nnoremap ∆ :m+<cr>
+    nnoremap ˚ :m-2<cr>
+else
+    nnoremap <m-j> :m+<cr>
+    nnoremap <m-k> :m-2<cr>
+endif
 
 " remap K keyword lookup
 nnoremap K <nop>

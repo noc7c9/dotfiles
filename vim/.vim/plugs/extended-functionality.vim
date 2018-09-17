@@ -27,12 +27,21 @@ Plug 'maxbrunsfeld/vim-yankstack'
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 's', 'x', 'X', 'y']
 " use alt-p/n instead of default mappings
 let g:yankstack_map_keys = 0
-nmap <m-p> <Plug>yankstack_substitute_older_paste
-xmap <m-p> <Plug>yankstack_substitute_older_paste
-imap <m-p> <Plug>yankstack_substitute_older_paste
-nmap <m-n> <Plug>yankstack_substitute_newer_paste
-xmap <m-n> <Plug>yankstack_substitute_newer_paste
-imap <m-n> <Plug>yankstack_substitute_newer_paste
+if env#is_mac()
+    nmap π <Plug>yankstack_substitute_older_paste
+    xmap π <Plug>yankstack_substitute_older_paste
+    imap π <Plug>yankstack_substitute_older_paste
+    nmap ˜ <Plug>yankstack_substitute_newer_paste
+    xmap ˜ <Plug>yankstack_substitute_newer_paste
+    imap ˜ <Plug>yankstack_substitute_newer_paste
+else
+    nmap <m-p> <Plug>yankstack_substitute_older_paste
+    xmap <m-p> <Plug>yankstack_substitute_older_paste
+    imap <m-p> <Plug>yankstack_substitute_older_paste
+    nmap <m-n> <Plug>yankstack_substitute_newer_paste
+    xmap <m-n> <Plug>yankstack_substitute_newer_paste
+    imap <m-n> <Plug>yankstack_substitute_newer_paste
+endif
 
 " incremental search highlighting
 Plug 'haya14busa/incsearch.vim'

@@ -15,10 +15,14 @@ let g:echodoc#enable_at_startup = 1
 " echodoc should handle this
 set completeopt-=preview
 
-
 " alt-j/k for scrolling through completions
-inoremap <m-j> <c-n>
-inoremap <m-k> <c-p>
+if env#is_mac()
+    inoremap ∆ <c-n>
+    inoremap ˚ <c-p>
+else
+    inoremap <m-j> <c-n>
+    inoremap <m-k> <c-p>
+endif
 
 " (shift-)tab for completions
 inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
