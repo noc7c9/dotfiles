@@ -16,3 +16,5 @@ augroup auto_numberline
                                          \ |     setlocal relativenumber
                                          \ | endif
 augroup END
+
+call reload#script('AutoNumberline', expand('<sfile>'))
