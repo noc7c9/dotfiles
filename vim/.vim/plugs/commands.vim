@@ -38,3 +38,5 @@ Plug 'wellle/visual-split.vim'
 
 " unix command helpers
 Plug 'tpope/vim-eunuch'
+" alternative to the :Delete (vim-eunuch) that doesn't change window layout
+command! -bang Del Unlink<bang>|Bdelete
