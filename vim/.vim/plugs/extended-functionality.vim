@@ -13,10 +13,12 @@ Plug 'tpope/vim-endwise'
 
 " autoclose/delete parens, brackets, quotes
 Plug 'jiangmiao/auto-pairs'
+let g:AutoPairsMultilineClose = 0
 " disable unwanted mappings
 let g:AutoPairsShortcutToggle = ''
 let g:AutoPairsShortcutJump = ''
 let g:AutoPairsMoveCharacter = ''
+let g:AutoPairsMapCh = 0
 
 " start */# search from visual mode
 Plug 'bronson/vim-visual-star-search'
