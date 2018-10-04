@@ -75,8 +75,13 @@ inoremap <c-c> <c-r>+
 cnoremap <c-c> <c-r>+
 
 " commandline history navigation
-cnoremap <m-k> <up>
-cnoremap <m-j> <down>
+if env#is_mac()
+    cnoremap ∆ <down>
+    cnoremap ˚ <up>
+else
+    cnoremap <m-j> <down>
+    cnoremap <m-k> <up>
+endif
 
 " buffer switching
 nnoremap <leader>b :buffers<cr>:edit #
