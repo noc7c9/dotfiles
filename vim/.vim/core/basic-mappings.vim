@@ -35,11 +35,11 @@ nmap Y y$
 
 " swap lines up/down
 if env#is_mac()
-    nnoremap ∆ :m+<cr>
-    nnoremap ˚ :m-2<cr>
+    nnoremap ∆ :m+<cr>==
+    nnoremap ˚ :m-2<cr>==
 else
-    nnoremap <m-j> :m+<cr>
-    nnoremap <m-k> :m-2<cr>
+    nnoremap <m-j> :m+<cr>==
+    nnoremap <m-k> :m-2<cr>==
 endif
 
 " remap K keyword lookup
