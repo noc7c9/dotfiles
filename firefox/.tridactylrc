@@ -60,44 +60,56 @@ bind <c-h> jsb browser.runtime.sendMessage('treestyletab@piro.sakura.ne.jp', { t
 bind <c-l> jsb browser.runtime.sendMessage('treestyletab@piro.sakura.ne.jp', { type: 'demote', tab: 'current', followChildren: true })
 
 """ search engine shortcuts
+
+" duck duck go
+set searchurls.d https://duckduckgo.com/?q=%s&t=canonical
+set searchurls.i https://duckduckgo.com/?q=%s&iax=1&ia=images
+set searchurls.di https://duckduckgo.com/?q=%s&iax=1&ia=images
+set searchurls.dv https://duckduckgo.com/?q=%s&iax=1&ia=videos
+
+" google
 set searchurls.g https://www.google.com/search?q=%s
 set searchurls.gi https://www.google.com/images?q=%s
 set searchurls.gg https://www.google.com/search?q=%s&btnI=1
 set searchurls.maps https://maps.google.com/maps?q=%s
+set searchurls.simi http://images.google.com/searchbyimage?image_url=%s
+
+" special
+set searchurls.group moz-extension://138bd07e-a1a8-bf48-80d1-c6b494eeb3f2/resources/group-tab.html?title=%s
+set searchurls.up https://isitup.org/check.php?domain=%s
+
 set searchurls.w http://en.wikipedia.org/w/index.php?search=%s&title=Special%3ASearch&go=Go
 set searchurls.y https://www.youtube.com/results?search_query=%s
+set searchurls.sub http://www.reddit.com/r/%s
 set searchurls.imdb https://www.google.com/search?q=imdb%20%s&btnI=1
+
+" language
+set searchurls.thes http://thesaurus.com/browse/%s
+set searchurls.dict http://dictionary.com/browse/%s
+set searchurls.slang http://www.urbandictionary.com/define.php?term=%s
 set searchurls.tr https://translate.google.com/#auto|en|%s
-set searchurls.simi http://images.google.com/searchbyimage?image_url=%s
-set searchurls.d https://duckduckgo.com/?q=%s&t=canonical
-set searchurls.di https://duckduckgo.com/?q=%s&iax=1&ia=images
-set searchurls.i https://duckduckgo.com/?q=%s&iax=1&ia=images
-set searchurls.dv https://duckduckgo.com/?q=%s&iax=1&ia=videos
+set searchurls.jap http://www.eudict.com/?lang=japeng&word=%s
+set searchurls.eng http://www.eudict.com/?lang=engjap&word=%s
+set searchurls.name http://www.behindthename.com/names/search.php?terms=%s
+set searchurls.sname http://surnames.behindthename.com/names/search.php?terms=%s
+
+" programming
 set searchurls.man https://www.google.com/search?q=%s%20site:man7.org/linux/man-pages&btnI=1
 set searchurls.wa http://www.wolframalpha.com/input/?i=%s
 set searchurls.cppref https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search=%s
 set searchurls.hoogle https://www.haskell.org/hoogle/?hoogle=%s
 set searchurls.hub https://github.com/search?q=%s
-set searchurls.thes http://thesaurus.com/browse/%s
-set searchurls.dict http://dictionary.com/browse/%s
-set searchurls.sub http://www.reddit.com/r/%s
-set searchurls.slang http://www.urbandictionary.com/define.php?term=%s
-set searchurls.name http://www.behindthename.com/names/search.php?terms=%s
-set searchurls.sname http://surnames.behindthename.com/names/search.php?terms=%s
+set searchurls.archwiki https://wiki.archlinux.org/index.php?title=Special%3ASearch&search=%s&go=Go
+
 set searchurls.emu http://www.emuparadise.me/roms/search.php?query=%s&section=all&sysid=0
 set searchurls.poke http://bulbapedia.bulbagarden.net/w/index.php?title=Special%3ASearch&search=%s&go=Go
 set searchurls.dm http://duelmasters.wikia.com/wiki/Special:Search?search=%s&fulltext=Search
 set searchurls.naru http://naruto.wikia.com/wiki/Special:Search?search=%s&fulltext=Search
-set searchurls.up https://isitup.org/check.php?domain=%s
 set searchurls.trope http://tvtropes.org/pmwiki/search_result.php?q=%s
-set searchurls.jap http://www.eudict.com/?lang=japeng&word=%s
-set searchurls.eng http://www.eudict.com/?lang=engjap&word=%s
 set searchurls.baka http://bakabt.me/browse.php?q=%s
 set searchurls.gf http://www.gamefaqs.com/search/index.html?game=%s
 set searchurls.drama http://mydramalist.com/browse/all?&q=%s
-set searchurls.s javascript:var%20a=%22%s%22;a=a.split(%22,%22);if(a[0]!==%22%22){var%20b=a[0].replace(/^\s+|\s+$/g,%22%22);if(window.location.href===%22about:blank%22)window.location.href=%22http://www.google.com/search?q=%22+b;strURL=%22http://google.com/search?sitesearch=%22+(a[1]?a[1].replace(/^\s+|\s+$/g,%22%22):window.location.hostname)+%22&q=%22+b;window.location.href=strURL}else%20window.location.href=%22http://google.com/ncr%22;
 set searchurls.mal http://myanimelist.net/search/all?q=%s
-set searchurls.archwiki https://wiki.archlinux.org/index.php?title=Special%3ASearch&search=%s&go=Go
 set searchurls.nuke http://nuclear-throne.wikia.com/wiki/Special:Search?query=%s
 set searchurls.book https://www.goodreads.com/search?utf8=%E2%9C%93&query=%s
 set searchurls.igdb https://www.igdb.com/search?utf8=%E2%9C%93&type=1&q=%s
