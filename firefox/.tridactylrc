@@ -3,8 +3,7 @@
 " reset config each startup
 sanitise tridactyllocal tridactylsync
 
-" make Tridactyl work on more sites at the expense of some security
-set csp clobber
+" make Tridactyl work on addons.mozilla.org
 fixamo_quiet
 
 set searchengine duckduckgo
