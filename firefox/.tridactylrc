@@ -62,6 +62,7 @@ bind <c-l> jsb browser.runtime.sendMessage('treestyletab@piro.sakura.ne.jp', { t
 
 " duck duck go
 set searchurls.d https://duckduckgo.com/?q=%s&t=canonical
+set searchurls.dd https://duckduckgo.com/?q=\%s&t=canonical
 set searchurls.i https://duckduckgo.com/?q=%s&iax=1&ia=images
 set searchurls.di https://duckduckgo.com/?q=%s&iax=1&ia=images
 set searchurls.dv https://duckduckgo.com/?q=%s&iax=1&ia=videos
