@@ -43,3 +43,7 @@ user_pref("network.allow-experiments", false);
 user_pref("breakpad.reportURL", "");
 user_pref("browser.tabs.crashReporting.sendReport", false);
 user_pref("browser.crashReports.unsubmittedCheck.enabled", false);
+
+// allow addons on all sites (including addons.mozilla.org)
+user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
+user_pref("extensions.webextensions.restrictedDomains", "");
