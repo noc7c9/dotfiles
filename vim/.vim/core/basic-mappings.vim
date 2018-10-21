@@ -88,3 +88,7 @@ nnoremap <leader>b :buffers<cr>:edit #
 
 " sister map to J, shadows S but a simple alternative is cc
 nnoremap S r<cr>
+
+" tab mappings that fit other programs
+nnoremap <c-tab> :tabnext<cr>
+nnoremap <c-s-tab> :tabprevious<cr>
