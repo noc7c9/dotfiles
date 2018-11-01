@@ -20,6 +20,9 @@ set theme dark
 keymap ; :
 keymap : ;
 
+" restore find
+unbind <c-f>
+
 " tab navigation
 bind J tabnext
 bind K tabprev
