@@ -1,3 +1,8 @@
+let b:ale_fixers = ['eslint']
+
+" enable flow type syntax highlighting
+let g:javascript_plugin_flow = 1
+
 " context sensitive vim-commentary
 if exists('g:loaded_commentary') && g:loaded_commentary
 
@@ -38,5 +43,3 @@ if exists('g:loaded_commentary') && g:loaded_commentary
     augroup END
 
 endif
-
-let b:ale_fixers = ['eslint']
