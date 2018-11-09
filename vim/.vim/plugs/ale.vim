@@ -13,3 +13,7 @@ let g:ale_lint_delay = 1000
 " sign characters
 let g:ale_sign_error = "X"
 let g:ale_sign_warning = "!"
+
+" mappings
+nmap <silent> ]a <Plug>(ale_next_wrap)
+nmap <silent> [a <Plug>(ale_next_wrap)
