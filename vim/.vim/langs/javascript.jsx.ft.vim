@@ -1,4 +1,4 @@
-let b:ale_fixers = ['eslint']
+let b:ale_fixers = ['eslint', 'prettier']
 
 " enable flow type syntax highlighting
 let g:javascript_plugin_flow = 1
