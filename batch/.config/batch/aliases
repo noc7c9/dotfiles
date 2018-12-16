@@ -1,0 +1,58 @@
+alias=doskey /macros
+aliases=doskey /macros
+
+;= conemu new tab and splits
+.nt=$* -new_console
+.sp=$* -new_console:sH
+.vs=$* -new_console:sV
+
+;= basic commands
+which=where $*
+sudo="C:\Program Files\ConEmu\ConEmu\csudo.cmd" $*
+ge=cmd /c "start nvim-qt $*"
+
+;= shell util modifications
+cd=cd $* $T ls
+mkdir=c:\cygwin64\bin\mkdir -p $*
+mkcd=c:\cygwin64\bin\mkdir -p $* $T cd $*
+
+..=cd .. $T ls
+...=cd ../.. $T ls
+....=cd ../../.. $T ls
+.....=cd ../../../.. $T ls
+
+;= fix pip to python 3
+pip=pip3 $*
+
+;= use tldr instead of man usually
+man=tldr $* | less
+realman=man $*
+
+;= folder shortcuts
+p=p: $T cd p:/$* $T ls
+dl=c: $T cd c:/users/user/downloads/$* $T ls
+vms=p: $T cd p:/arch-vm-share/$* $T ls
+gdrive=p: $T cd p:/$$gdrive/$* $T ls
+.files=p: $T cd p:/$$gdrive/.files/$* $T ls
+
+;= git commands
+gita=git a $*
+gitaa=git aa $*
+gitb=git b $*
+gitco=git co $*
+gitd=git d $*
+gitds=git ds $*
+gitl=git l $*
+gitll=git ll $*
+gitlll=git lll $*
+gits=git s $*
+gitx=git x $*
+gitxa=git xa $*
+
+;= conemu
+ct=conemu-task $*
+
+;= calculator
+:= note: this part must be last
+-=py -c "print($*)"
+;=py -c "print($*)"
