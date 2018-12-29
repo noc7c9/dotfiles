@@ -72,6 +72,5 @@ gxam=git xa -m "$*"
 ct=conemu-task $*
 
 ;= calculator
-:= note: this part must be last
--=py -c "print($*)"
+;= note: this part must be last
 ;=py -c "print($*)"
