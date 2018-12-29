@@ -21,6 +21,8 @@ mkcd=c:\cygwin64\bin\mkdir -p $* $T cd $*
 ....=cd ../../.. $T ls
 .....=cd ../../../.. $T ls
 
+lsa=ls -A
+
 ;= fix pip to python 3
 pip=pip3 $*
 
