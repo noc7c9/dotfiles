@@ -13,6 +13,7 @@
     xa = commit -a
     d = diff
     ds = diff --staged
+    last = show head
 
     # http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
     l = log -n 5 --graph --format=format:'%C(bold cyan)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)<%an>%C(reset)%C(auto)%d%C(reset)%n%C(white)%s%C(reset)%n'
