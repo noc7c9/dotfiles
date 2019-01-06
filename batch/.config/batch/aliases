@@ -9,7 +9,7 @@ aliases=doskey /macros
 ;= basic commands
 which=where $*
 sudo="C:\Program Files\ConEmu\ConEmu\csudo.cmd" $*
-ge=cmd /c "start nvim-qt $*"
+e=cmd /c "start nvim-qt $*"
 
 ;= shell util modifications
 cd=cd $* $T ls
@@ -38,19 +38,6 @@ gdrive=p: $T cd p:/$$gdrive/$* $T ls
 .files=p: $T cd p:/$$gdrive/.files/$* $T ls
 
 ;= git commands
-gita=echo use ga instead
-gitaa=echo use gaa instead
-gitb=echo use gb instead
-gitco=echo use gco instead
-gitd=echo use gd instead
-gitds=echo use gds instead
-gitl=echo use gl instead
-gitll=echo use gll instead
-gitlll=echo use glll instead
-gits=echo use gs instead
-gitx=echo use gx instead
-gitxa=echo use gxa instead
-
 g=git $*
 ga=git a $*
 gaa=git aa $*
