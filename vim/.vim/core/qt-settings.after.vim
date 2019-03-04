@@ -19,6 +19,10 @@ function! s:qt_initialize()
     " set font
     GuiFont! Consolas:h10
 
+    " get rid of the native gui elements
+    GuiTabline 0
+    GuiPopupmenu 0
+
     " start maximized
     call GuiWindowMaximized(1)
 
