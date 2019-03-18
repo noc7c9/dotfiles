@@ -13,3 +13,6 @@ let g:ale_sign_warning = "!"
 " auto fix on save
 let g:ale_fix_on_save = 1
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'] }
+
+" helper command to completely reset ale
+command! ALEHardReset ALEDisable<bar>ALEStopAllLSPs<bar>ALEEnable
