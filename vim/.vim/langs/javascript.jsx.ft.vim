@@ -3,7 +3,7 @@ let b:ale_fixers = ['eslint', 'prettier']
 " enable flow type syntax highlighting
 let g:javascript_plugin_flow = 1
 
-" context sensitive vim-commentary
+" jsx context sensitive vim-commentary
 if exists('g:loaded_commentary') && g:loaded_commentary
 
     let s:js_commentstring = '//%s'
