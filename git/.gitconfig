@@ -36,4 +36,5 @@
     autocrlf = false
     eol = lf
 [credential]
+    helper = libsecret
     helper = manager
