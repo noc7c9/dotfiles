@@ -2,11 +2,11 @@ p() { cd "$HOME/projects/$*" || return; l; }
 ___dotfiles() { cd "$HOME/dotfiles/$*" || return; l; }
 alias .files="___dotfiles"
 
-alias l="exa -aF"
-alias ll="exa -aFl --git"
+l() { exa --all --classify --sort type; }
+ll() { exa --all --classify --sort type --long --git; }
 
-alias ls="ls -hFG"
-alias lsa="ls -A"
+l() { exa --all --classify --sort type "$@"; }
+ll() { exa --all --classify --sort type --long --git "$@"; }
 alias lsl="lsa -l"
 
 alias e="nvim"
