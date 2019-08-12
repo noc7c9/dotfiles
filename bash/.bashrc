@@ -1,5 +1,5 @@
-p() { cd ~/projects/$*; ls; }
-___dotfiles() { cd ~/dotfiles/$*; ls -AFG; }
+p() { cd "$HOME/projects/$*" || return; l; }
+___dotfiles() { cd "$HOME/dotfiles/$*" || return; l; }
 alias .files="___dotfiles"
 
 alias l="exa -aF"
