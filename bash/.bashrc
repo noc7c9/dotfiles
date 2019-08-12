@@ -2,6 +2,9 @@ p() { cd ~/projects/$*; ls; }
 ___dotfiles() { cd ~/dotfiles/$*; ls -AFG; }
 alias .files="___dotfiles"
 
+alias l="exa -aF"
+alias ll="exa -aFl --git"
+
 alias ls="ls -hFG"
 alias lsa="ls -A"
 alias lsl="lsa -l"
