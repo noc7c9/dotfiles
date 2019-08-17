@@ -1,16 +1,16 @@
+# Setup shortcuts to common folders
 p() { cd "$HOME/projects/$*" || return; l; }
 ___dotfiles() { cd "$HOME/dotfiles/$*" || return; l; }
 alias .files="___dotfiles"
 
-l() { exa --all --classify --sort type; }
-ll() { exa --all --classify --sort type --long --git; }
-
+# ls shortcuts
 l() { exa --all --classify --sort type "$@"; }
 ll() { exa --all --classify --sort type --long --git "$@"; }
-alias lsl="lsa -l"
 
+# Misc shortcuts
 alias e="nvim"
 
+# Git shortcuts
 alias g="git"
 alias ga="git a"
 alias gaa="git aa"
