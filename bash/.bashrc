@@ -1,6 +1,6 @@
 # Setup shortcuts to common folders
-p() { cd "$HOME/projects/$*" || return; l; }
-___dotfiles() { cd "$HOME/dotfiles/$*" || return; l; }
+p() { cd "$HOME/projects/$*" || return; l .; }
+___dotfiles() { cd "$HOME/dotfiles/$*" || return; l .; }
 alias .files="___dotfiles"
 
 # ls shortcuts
