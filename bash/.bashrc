@@ -33,3 +33,6 @@ export PATH=./node_modules/.bin:$PATH
 
 # Add binaries installed with cargo to PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Add binaries installed with pip to PATH
+export PATH="$HOME/.local/bin:$PATH"
