@@ -8,6 +8,7 @@ l() { exa --all --classify --sort type "$@"; }
 ll() { exa --all --classify --sort type --long --git "$@"; }
 
 # Misc shortcuts
+mkcd() { mkdir -p "$@"; cd "$@" || return; }
 alias e="nvim"
 
 # Git shortcuts
