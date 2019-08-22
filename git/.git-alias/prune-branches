@@ -1,0 +1,31 @@
+#!/bin/sh
+
+if ! git remote prune origin; then
+    echo "> Failed run git remote prune origin"
+    exit 1
+fi
+
+IFS='
+'
+for line in $(git branch -vv | grep '\[origin/.*: gone\]'); do
+    branch=$(echo "$line" | awk '{print $1}')
+
+    if [ "$branch" = "*" ]; then
+        echo "> Current branch needs to be pruned, switching to develop or master"
+        if ! git checkout develop > /dev/null 2>&1; then
+            if ! git checkout master > /dev/null 2>&1; then
+                echo ">! Failed to switch to develop or master, exiting"
+                exit 1
+            else
+                echo ">> Switched to master"
+            fi
+        else
+            echo ">> Switched to develop"
+        fi
+        branch=$(echo "$line" | awk '{print $2}')
+    fi
+
+    git branch --delete "$branch"
+
+    echo
+done

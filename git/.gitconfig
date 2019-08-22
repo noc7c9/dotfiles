@@ -27,6 +27,9 @@
 
     dlast = diff HEAD^ HEAD
 
+    prune-branches = !sh ~/.git-alias/prune-branches
+    bprune = prune-branches
+
     # http://blog.blindgaenger.net/advanced_git_aliases.html
     this = !git init && git add . && git commit -m \"Initial commit\"
     ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo >> .gitignore
