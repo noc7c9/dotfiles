@@ -16,5 +16,7 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 2018,
     },
-    rules: {},
+    rules: {
+        'no-unused-vars': 'warn',
+    },
 };
