@@ -17,6 +17,7 @@ alias g="git"
 alias ga="git a"
 alias gaa="git aa"
 alias gb="git b"
+alias gbprune="git bprune"
 alias gco="git co"
 alias gd="git d"
 alias gds="git ds"
@@ -27,6 +28,7 @@ alias glast="git last"
 alias gs="git s"
 alias gx="git x"
 alias gxa="git xa"
+alias gunstage="git unstage"
 gxm() { git x -m "$*"; }
 gxam() { git xa -m "$*"; }
 gamendm() { git amend -m "$*"; }
