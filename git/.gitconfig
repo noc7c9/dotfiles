@@ -41,3 +41,6 @@
 [credential]
     helper = libsecret
     helper = manager
+[pager]
+    show = diffr | less -R
+    diff = diffr | less -R
