@@ -21,7 +21,7 @@
     lll = !"git ll --all --full-history -n -1"
 
     amend = commit --amend --no-edit
-    undo = reset --soft HEAD~
+    undo = !git show --quiet && git reset --soft HEAD~
     unstage = reset HEAD
     unstash = stash pop
 
