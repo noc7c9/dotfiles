@@ -23,11 +23,14 @@ alias gds="git ds"
 alias gl="git l"
 alias gll="git ll"
 alias glll="git lll"
+alias glast="git last"
 alias gs="git s"
+alias gshow="git show"
 alias gx="git x"
 alias gxa="git xa"
 gxm() { git x -m "$*"; }
 gxam() { git xa -m "$*"; }
+gamendm() { git amend -m "$*"; }
 
 # Expose binaries installed in the current project's node_modules folder
 export PATH=./node_modules/.bin:$PATH
