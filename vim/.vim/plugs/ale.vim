@@ -16,3 +16,8 @@ let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'] }
 
 " helper command to completely reset ale
 command! ALEHardReset ALEDisable<bar>ALEStopAllLSPs<bar>ALEEnable
+
+" mappings
+nmap <silent> ]a <Plug>(ale_next_wrap)
+nmap <silent> [a <Plug>(ale_previous_wrap)
+nmap <silent> <leader>a <Plug>(ale_detail)
