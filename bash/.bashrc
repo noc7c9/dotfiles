@@ -40,3 +40,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Add binaries installed with pip to PATH
 export PATH="$HOME/.local/bin:$PATH"
+
+# Load in local-only settings
+source ./.bashrc.local
