@@ -53,10 +53,12 @@ set splitright splitbelow
 " diff options
 set diffopt=filler,vertical,foldcolumn:1
 
-" margin
-" +1 so that the last character is just before the line starts
+" margin is by default at 80
 set textwidth=80
-let &colorcolumn = &textwidth + 1
+
+" set the column marker at textwidth + 1 so that the last character is just
+" before the line starts
+autocmd filetype * let &l:colorcolumn = 1 + &l:textwidth
 
 " always only one space when joining
 set nojoinspaces
