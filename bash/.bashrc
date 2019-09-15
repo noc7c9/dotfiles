@@ -42,4 +42,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Load in local-only settings
-source ~/.bashrc.local
+if [ -f ~/.bashrc.local ]; then
+    # shellcheck source=/dev/null
+    source ~/.bashrc.local
+fi
