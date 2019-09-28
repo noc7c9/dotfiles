@@ -1,0 +1,98 @@
+#!/bin/bash
+
+BIN=$(basename "$0")
+
+function print-usage() {
+cat << EOF
+$BIN - Sends a notification when a command finishes
+
+USAGE:
+    $BIN [OPTIONS] [CMD]
+
+OPTIONS:
+    -h, --help                  Prints help information
+        --install [<ALIAS>]     Install alert under an optional alias
+                                Put the following into ~/.bashrc: eval "\$($BIN --install)"
+
+EXAMPLES:
+    $ $BIN "sleep 3 && (exit 42)"
+    $ sleep 3 && (exit 42); $BIN
+EOF
+}
+
+function main() {
+    # check if we got an options flag
+    if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+        print-usage
+        exit
+    fi
+
+    if [ "$1" == "--install" ]; then
+        print-install-code
+        exit
+    fi
+
+    # make sure we have toastify installed (and in PATH)
+    check-toastify-is-installed
+
+    # check if this is a post call (eg: cmd; alert)
+    if [ "$1" == "__ALERT_POSTCMD__" ] && [ ! "$2" == "" ]; then
+        shift
+
+        local exitcode="$1"
+        shift
+
+        # alert with the given details
+        alert "$exitcode" "$@"
+        exit
+    fi
+
+    # check if this is a pre call (eg: alert cmd)
+    if [ $# -gt 0 ]; then
+        # run the command and alert if we did
+        eval "$@"
+        alert $? "$@"
+        exit
+    fi
+
+    # neither, so alert hasn't been installed yet
+    print-usage
+    exit 1
+}
+
+function print-install-code() {
+cat << EOF
+function $BIN() {
+    local exitcode="\$?"
+    local command="\$(history 1 | sed 's/^ *[[:digit:]]*  //')"
+    if [ \$# -eq 0 ]; then
+        $0 __ALERT_POSTCMD__ \$exitcode "\$command"
+    else
+        $0 "\$@"
+    fi
+}
+EOF
+}
+
+function check-toastify-is-installed() {
+    if ! command -v toastify > /dev/null; then
+        echo "$BIN requires toastify"
+        echo "Install with \"cargo install toastify\""
+        exit 1
+    fi
+}
+
+function alert() {
+    local code=$1
+    shift
+
+    tput bel
+
+    if [ "$code" == "0" ]; then
+        toastify send "Done: $*"
+    else
+        toastify send "Failed: $*" "Exit Code: $code"
+    fi
+}
+
+main "$@"

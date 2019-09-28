@@ -41,8 +41,14 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Add binaries installed with pip to PATH
 export PATH="$HOME/.local/bin:$PATH"
 
+# Add ~/bin to PATH
+export PATH="$HOME/bin:$PATH"
+
 # Load in local-only settings
 if [ -f ~/.bashrc.local ]; then
     # shellcheck source=/dev/null
     source ~/.bashrc.local
 fi
+
+eval "$(alert --install)"
+alias aa=alert
