@@ -25,6 +25,8 @@
     unstage = reset HEAD
     unstash = stash pop
 
+    pushnew = push -u origin HEAD
+
     dlast = diff HEAD^ HEAD
 
     prune-branches = !sh ~/.git-alias/prune-branches
