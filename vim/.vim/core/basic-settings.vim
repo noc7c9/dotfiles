@@ -137,3 +137,7 @@ endif
 
 " always show sign column
 set signcolumn=yes
+
+" Use the (slower) backup method,
+" the other method can interfere with file watchers
+set backupcopy=yes
