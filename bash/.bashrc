@@ -50,5 +50,8 @@ if [ -f ~/.bashrc.local ]; then
     source ~/.bashrc.local
 fi
 
+# Setup FZF to use ripgrep
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+
 eval "$(alert --install)"
 alias aa=alert
