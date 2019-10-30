@@ -5,7 +5,7 @@ alias .files="___dotfiles"
 
 # ls shortcuts
 l() { exa --all --classify --sort type "$@"; }
-ll() { exa --all --classify --sort type --long --git "$@"; }
+ll() { exa --all --classify --sort type --long "$@"; }
 
 # Misc shortcuts
 alias mkdir="mkdir -p"
