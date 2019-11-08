@@ -1,3 +1,6 @@
+# command to reload bash config
+alias reload-bashrc="source ~/.bashrc"
+
 # Setup shortcuts to common folders
 p() { cd "$HOME/projects/$*" || return; l .; }
 ___dotfiles() { cd "$HOME/dotfiles/$*" || return; l .; }
