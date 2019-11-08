@@ -58,3 +58,18 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 eval "$(alert --install)"
 alias aa=alert
+
+# Configure bash history
+
+# Unlimited bash history
+# https://superuser.com/a/664061
+HISTFILESIZE=
+HISTSIZE=
+HISTFILE=~/.bash_unlimited_history
+
+# Force prompt to write history after every command.
+# http://superuser.com/questions/20900/bash-history-loss
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+# Stop duplicates in the history and ignore commands that start with space
+HISTCONTROL=ignorespace:ignoredups:erasedups
