@@ -65,6 +65,7 @@ alias aa=alert
 # https://superuser.com/a/664061
 HISTFILESIZE=
 HISTSIZE=
+HISTTIMEFORMAT="%F %T $ "
 HISTFILE=~/.bash_unlimited_history
 
 # Force prompt to write history after every command.
