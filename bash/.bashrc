@@ -9,6 +9,8 @@ alias .files="___dotfiles"
 # ls shortcuts
 l() { exa --all --classify --sort type "$@"; }
 ll() { exa --all --classify --sort type --long "$@"; }
+lt() { l --tree "$@"; }
+llt() { ll --tree "$@"; }
 
 # Misc shortcuts
 alias mkdir="mkdir -p"
