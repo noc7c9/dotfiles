@@ -64,7 +64,7 @@ function print-install-code() {
 cat << EOF
 function $BIN() {
     local exitcode="\$?"
-    local command="\$(history 1 | sed 's/^ *[[:digit:]]*  //')"
+    local command="\$(history 1 | sed 's/^[^$]*//')"
     if [ \$# -eq 0 ]; then
         $0 __ALERT_POSTCMD__ \$exitcode "\$command"
     else
