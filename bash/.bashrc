@@ -63,6 +63,9 @@ alias aa=alert
 
 # Configure bash history
 
+# # Append to the history file, don't overwrite it
+# shopt -s histappend
+
 # Unlimited bash history
 # https://superuser.com/a/664061
 HISTFILESIZE=
