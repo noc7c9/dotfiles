@@ -21,3 +21,15 @@ command! ALEHardReset ALEDisable<bar>ALEStopAllLSPs<bar>ALEEnable
 nmap <silent> ]a <Plug>(ale_next_wrap)
 nmap <silent> [a <Plug>(ale_previous_wrap)
 nmap <silent> <leader>a <Plug>(ale_detail)
+
+" commands to enable/disable/toggle ale fix
+command! ALEFixEnable let g:ale_fix_on_save = 1
+            \ | unlet! b:ale_fix_on_save
+command! ALEFixDisable let g:ale_fix_on_save = 0
+            \ | unlet! b:ale_fix_on_save
+command! ALEFixToggle let g:ale_fix_on_save = !get(g:, 'ale_fix_on_save', 0)
+            \ | unlet! b:ale_fix_on_save
+
+command! ALEFixEnableBuffer let b:ale_fix_on_save = 1
+command! ALEFixDisableBuffer let b:ale_fix_on_save = 0
+command! ALEFixToggleBuffer let b:ale_fix_on_save = !get(b:, 'ale_fix_on_save', 0)
