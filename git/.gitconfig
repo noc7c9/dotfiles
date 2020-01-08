@@ -44,5 +44,5 @@
     helper = libsecret
     helper = manager
 [pager]
-    show = diffr | less -R
-    diff = diffr | less -R
+    show = diffr --line-numbers | less -R
+    diff = diffr --line-numbers | less -R
