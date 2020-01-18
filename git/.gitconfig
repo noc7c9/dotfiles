@@ -40,9 +40,7 @@
     excludesfile = ~/.gitignore_global
     autocrlf = false
     eol = lf
+    pager = diffr --line-numbers | less -R
 [credential]
     helper = libsecret
     helper = manager
-[pager]
-    show = diffr --line-numbers | less -R
-    diff = diffr --line-numbers | less -R
