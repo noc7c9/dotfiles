@@ -29,3 +29,5 @@ for line in $(git branch -vv | grep '\[origin/.*: gone\]'); do
 
     echo
 done
+
+echo Done!
