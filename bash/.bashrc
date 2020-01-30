@@ -50,12 +50,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # Note: ~/bin.local comes first so that it can override ~/bin
 export PATH="$HOME/bin.local:$HOME/bin:$PATH"
 
-# Load in local-only settings
-if [ -f ~/.bashrc.local ]; then
-    # shellcheck source=/dev/null
-    source ~/.bashrc.local
-fi
-
 # Setup FZF to use ripgrep
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
@@ -80,3 +74,11 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # Stop duplicates in the history and ignore commands that start with space
 HISTCONTROL=ignorespace:ignoredups:erasedups
+
+# Load in local-only settings
+# Note: this should be the last command in ~/.bashrc so that the local settings
+# can override any global ones
+if [ -f ~/.bashrc.local ]; then
+    # shellcheck source=/dev/null
+    source ~/.bashrc.local
+fi
