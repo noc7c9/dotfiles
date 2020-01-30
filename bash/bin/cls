@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# This script should completely clear the screen including the scrollback
+
+if [ "$TERM_PROGRAM" == "iTerm.app" ]; then
+    printf "\e]50;ClearScrollback\a"
+    exit
+fi
+
+tput reset
