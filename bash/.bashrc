@@ -46,8 +46,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Add binaries installed with pip to PATH
 export PATH="$HOME/.local/bin:$PATH"
 
-# Add ~/bin to PATH
-export PATH="$HOME/bin:$PATH"
+# Add ~/bin and ~/bin.local to PATH
+# Note: ~/bin.local comes first so that it can override ~/bin
+export PATH="$HOME/bin.local:$HOME/bin:$PATH"
 
 # Load in local-only settings
 if [ -f ~/.bashrc.local ]; then
