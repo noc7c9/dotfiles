@@ -70,7 +70,12 @@ HISTFILE=~/.bash_unlimited_history
 
 # Force prompt to write history after every command.
 # http://superuser.com/questions/20900/bash-history-loss
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+if [[ -z "$PROMPT_COMMAND" ]]; then
+    PROMPT_COMMAND="history -a"
+else
+    # Remove any trailing semicolon before appending
+    PROMPT_COMMAND="${PROMPT_COMMAND%;}; history -a"
+fi
 
 # Stop duplicates in the history and ignore commands that start with space
 HISTCONTROL=ignorespace:ignoredups:erasedups
