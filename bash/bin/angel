@@ -1,0 +1,75 @@
+#!/bin/bash
+
+BIN=$(basename "$0")
+
+function print-usage() {
+cat << EOF
+$BIN - Run the given script file and re-running on changing the file
+
+USAGE:
+    $BIN [OPTIONS] script
+
+OPTIONS:
+    -h, --help                  Prints help information
+
+EXAMPLES:
+    $ $BIN node.js
+    $ $BIN python.py
+EOF
+}
+
+function main() {
+    # Check if we got an options flag
+    if [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ "$1" == "" ]; then
+        print-usage
+        exit
+    fi
+
+    # Make sure we got a script
+    if [ "$1" == "" ]; then
+        print-usage
+        exit 1
+    fi
+
+    watch-run-script "$1"
+}
+
+function get-lang() {
+    local filename
+    filename=$(basename -- "$1")
+    echo "${filename##*.}"
+}
+
+function get-exe() {
+    case "$1" in
+        "js") echo "node";;
+        "py") echo "python3";;
+        "sh") echo "bash";;
+    esac
+}
+
+function get-exts() {
+    case "$1" in
+        "js") echo "js";;
+        "py") echo "py";;
+        "sh") echo "sh";;
+    esac
+}
+
+function watch-run-script() {
+    local script
+    local lang
+    local exe
+    local exts
+
+    script=$1
+    lang="$(get-lang "$script")"
+    exe="$(get-exe "$lang")"
+    exts="$(get-exts "$lang")"
+
+    shift
+
+    watchexec --clear --restart --watch "$script" --watch "." --exts "$exts" "$*" "$exe" "$script"
+}
+
+main "$@"
