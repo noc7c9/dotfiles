@@ -1,3 +1,5 @@
+setlocal commentstring=//%s
+
 let b:ale_fixers = ['prettier']
 
 " enable flow type syntax highlighting
