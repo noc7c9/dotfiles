@@ -1,3 +1,5 @@
+# __STARTUP_START=$(date +%s%N)
+
 # command to reload bash config
 alias reload-bashrc="source ~/.bashrc"
 
@@ -87,3 +89,7 @@ if [ -f ~/.bashrc.local ]; then
     # shellcheck source=/dev/null
     source ~/.bashrc.local
 fi
+
+# __STARTUP_END=$(date +%s%N)
+# printf "STARTUP TIME = "
+# bc <<< "scale=5; ($__STARTUP_END - $__STARTUP_START) / 1000000000"
