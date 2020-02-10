@@ -17,13 +17,22 @@ function cyan() {
     echo -e "${CYAN}$1${NC}"
 }
 
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+    echo "Usage: $0 [-h|--help] [-f|--fetch]"
+    exit
+fi
+
 for dir in alpaca*/; do
     echo "===== $dir ====="
     cd "$dir" || exit 1
 
-    printf "+ Git Fetching... "
-    git fetch 1>&2 2>/dev/null
-    cyan "Done!"
+    git status | grep "On branch"
+
+    if [ "$1" == "-f" ] || [ "$1" == "--fetch" ]; then
+        printf "+ Git Fetching... "
+        git fetch 1>&2 2>/dev/null
+        cyan "Done!"
+    fi
 
     printf "? Has uncommitted changes? "
     nothing_to_commit=$(git status | rg "nothing to commit")
