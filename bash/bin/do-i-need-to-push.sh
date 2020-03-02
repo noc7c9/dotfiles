@@ -42,18 +42,19 @@ for dir in alpaca*/; do
         green No
     fi
 
-    printf "? Has unpushed changes? "
-    ahead_branches=$(git branch -vv | rg ahead)
-    if [ "$ahead_branches" != "" ]; then
+    printf "? Has stashed changes? "
+    stashed_changed=$(git stash list)
+    if [ "$stashed_changed" != "" ]; then
         red Yes
     else
         green No
     fi
 
-    printf "? Has stashed changes? "
-    stashed_changed=$(git stash list)
-    if [ "$stashed_changed" != "" ]; then
+    printf "? Has unpushed changes? "
+    ahead_branches=$(git branch -vv | rg ahead)
+    if [ "$ahead_branches" != "" ]; then
         red Yes
+        git branch -v | rg ahead -C 999999
     else
         green No
     fi
