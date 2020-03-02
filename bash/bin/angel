@@ -66,10 +66,23 @@ function watch-run-script() {
     lang="$(get-lang "$script")"
     exe="$(get-exe "$lang")"
     exts="$(get-exts "$lang")"
+    cmd="$exe $script"
 
     shift
 
-    watchexec --clear --restart --watch "$script" --watch "." --exts "$exts" "$*" "$exe" "$script"
+    if [ "$(is-iterm2)" == "true" ]; then
+        cmd="printf '\e]50;ClearScrollback\a' && $cmd"
+    fi
+
+    watchexec --clear --restart --watch "$script" --watch "." --exts "$exts" "$*" "$cmd"
+}
+
+function is-iterm2() {
+    if [ "$TERM_PROGRAM" == "iTerm.app" ]; then
+        echo true
+    else
+        echo false
+    fi
 }
 
 main "$@"
