@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+PEM_FILE_PREFIX=~/awspd/athir-key-pair-
+
+usage() {
+    echo "usage: $(basename "$0") [user@]ec2-IP.REGION[.compute.amazonaws.com]"
+    exit "$1"
+}
+
+# Parse arguments
+URL=$1
+
+if [ "$URL" == "-h" ] || [ "$URL" == "--help" ]; then
+    usage 0
+fi
+if [ "$URL" == "" ]; then
+    usage 1
+fi
+
+# Parse the url
+USER="(([a-zA-Z0-9-]+)@)?"
+
+EC2_IP="(-[0-9]{1,3}){4}"
+REGION="[a-zA-Z]{2}-[a-zA-Z]+-[0-9]+"
+HOST="(ec2${EC2_IP})\.(${REGION})"
+
+FULL_REGEX="(${USER})?${HOST}"
+[[ $URL =~ $FULL_REGEX ]]
+
+user=${BASH_REMATCH[3]}
+ec2ip=${BASH_REMATCH[4]}
+region=${BASH_REMATCH[6]}
+
+# Assume default user: ec2-user
+if [ "$user" == "" ]; then
+    user=ec2-user
+fi
+
+# Complain if the region is missing
+if [ "$region" == "" ]; then
+    usage 1
+fi
+
+# Make sure the correct pem file is present
+pem_file="${PEM_FILE_PREFIX}${region}.pem"
+if [ ! -e "$pem_file" ]; then
+    echo "Error: Missing PEM file: $pem_file"
+    exit 1
+fi
+
+# Build the final url & connect
+url="$user@$ec2ip.$region.compute.amazonaws.com"
+echo "Connecting to $url"
+ssh -i "$pem_file" "$url"
