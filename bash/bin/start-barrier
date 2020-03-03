@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pkill -f barrierc
+barrier.barrierc --daemon --restart --enable-crypto 192.168.1.103
