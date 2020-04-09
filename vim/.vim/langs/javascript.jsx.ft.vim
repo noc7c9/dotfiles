@@ -2,6 +2,11 @@ setlocal commentstring=//%s
 
 let b:ale_fixers = ['prettier']
 
+" enable syntax based folding
+setlocal foldmethod=syntax
+setlocal foldminlines=5
+setlocal foldnestmax=5
+
 " jsx context sensitive vim-commentary
 if exists('g:loaded_commentary') && g:loaded_commentary
 
