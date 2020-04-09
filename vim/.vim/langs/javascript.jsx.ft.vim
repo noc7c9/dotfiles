@@ -2,9 +2,6 @@ setlocal commentstring=//%s
 
 let b:ale_fixers = ['prettier']
 
-" enable flow type syntax highlighting
-let g:javascript_plugin_flow = 1
-
 " jsx context sensitive vim-commentary
 if exists('g:loaded_commentary') && g:loaded_commentary
 
