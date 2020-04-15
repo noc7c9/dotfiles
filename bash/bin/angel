@@ -7,14 +7,14 @@ cat << EOF
 $BIN - Run the given script file and re-running on changing the file
 
 USAGE:
-    $BIN [OPTIONS] script
+    $BIN [OPTIONS] script [ARGS]
 
 OPTIONS:
     -h, --help                  Prints help information
 
 EXAMPLES:
     $ $BIN node.js
-    $ $BIN python.py
+    $ $BIN python.py additional-arguments
 EOF
 }
 
@@ -31,7 +31,7 @@ function main() {
         exit 1
     fi
 
-    watch-run-script "$1"
+    watch-run-script "$@"
 }
 
 function get-lang() {
@@ -74,7 +74,7 @@ function watch-run-script() {
         cmd="printf '\e]50;ClearScrollback\a' && $cmd"
     fi
 
-    watchexec --clear --restart --watch "$script" --watch "." --exts "$exts" "$*" "$cmd"
+    watchexec --clear --restart --watch "$script" --watch "." --exts "$exts" "$cmd" "$@"
 }
 
 function is-iterm2() {
