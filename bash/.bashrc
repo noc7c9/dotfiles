@@ -39,6 +39,16 @@ gxm() { git x -m "$*"; }
 gxam() { git xa -m "$*"; }
 gamendm() { git amend -m "$*"; }
 
+# Yarn shortcuts
+alias y="yarn"
+alias ys="yarn start"
+alias yt="yarn test"
+alias ytw="yarn test:watch"
+alias ya="yarn add"
+alias yad="yarn add -D"
+alias yr="yarn remove"
+alias yb="yarn build"
+
 # Expose binaries installed in the current project's node_modules folder
 export PATH=./node_modules/.bin:$PATH
 
