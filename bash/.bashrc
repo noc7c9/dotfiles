@@ -41,6 +41,7 @@ gamendm() { git amend -m "$*"; }
 
 # Yarn shortcuts
 alias y="yarn"
+alias yi="yarn install"
 alias ys="yarn start"
 alias yt="yarn test"
 alias ytw="yarn test:watch"
