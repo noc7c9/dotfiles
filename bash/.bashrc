@@ -50,6 +50,26 @@ alias yad="yarn add -D"
 alias yr="yarn remove"
 alias yb="yarn build"
 
+function y?() {
+    local jqcmd
+    local initial
+
+    initial=$(pwd)
+    jqcmd=".scripts | to_entries[] | \"- $(tput bold)\\(.key)$(tput sgr0)\\n     \\(.value)\""
+
+    # Walk up the tree looking for a package.json file
+    while [ "$(pwd)" != "/" ]; do
+        if [ -f "./package.json" ]; then
+            jq --raw-output "$jqcmd" ./package.json
+            break;
+        fi
+
+        cd ..
+    done
+
+    cd "$initial" || exit
+}
+
 # Expose binaries installed in the current project's node_modules folder
 export PATH=./node_modules/.bin:$PATH
 
