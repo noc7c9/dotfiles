@@ -18,6 +18,7 @@ llt() { ll --tree "$@"; }
 alias mkdir="mkdir -p"
 mkcd() { mkdir -p "$@"; cd "$@" || return; }
 alias e="nvim"
+alias j="just"
 
 # Git shortcuts
 alias g="git"
