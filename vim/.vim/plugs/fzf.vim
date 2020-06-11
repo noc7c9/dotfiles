@@ -10,6 +10,10 @@ nnoremap <leader>g :Rg<space>
 " this maps it to send <esc> to fzf directly (to cancel fzf)
 autocmd filetype fzf tnoremap <buffer> <esc> i<esc>
 
-" disable the window movement mappings when in the fuzzy window
+" disable the window movement mappings when in the fzf window
 autocmd filetype fzf tnoremap <buffer> <c-j> <c-n>
 autocmd filetype fzf tnoremap <buffer> <c-k> <c-p>
+
+" disable the arrow keys in the fzf window
+autocmd filetype fzf tnoremap <buffer> <up> <nop>
+autocmd filetype fzf tnoremap <buffer> <down> <nop>
