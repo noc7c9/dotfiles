@@ -1,5 +1,5 @@
 " quick quit
-nnoremap <buffer> qq :quit<cr>
+nnoremap <buffer> <esc><esc> :quit<cr>
 
 " mappings for the tag stack
 nnoremap <buffer> <cr> <c-]>
