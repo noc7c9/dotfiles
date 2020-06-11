@@ -15,6 +15,9 @@ let g:echodoc#enable_at_startup = 1
 " echodoc should handle this
 set completeopt-=preview
 
+" don't automatically select any matches
+set completeopt+=noselect
+
 " alt-j/k for scrolling through completions
 if env#is_mac()
     inoremap ∆ <c-n>
