@@ -25,8 +25,10 @@ Plug 'bronson/vim-visual-star-search'
 
 " cycle through yank history after pasting
 Plug 'maxbrunsfeld/vim-yankstack'
-" remap everything other than Y and S
-let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 's', 'x', 'X', 'y']
+" remap everything other than
+"  - Y (mapped to y$ for consistency)
+"  - s & S (used by sneak)
+let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y']
 " use alt-p/n instead of default mappings
 let g:yankstack_map_keys = 0
 if env#is_mac()
