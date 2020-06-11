@@ -85,6 +85,7 @@ export PATH="$HOME/bin.local:$HOME/bin:$PATH"
 
 # Setup FZF to use ripgrep
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_CTRL_T_COMMAND='rg --files --follow'
 
 eval "$(alert --install)"
 alias aa=alert
