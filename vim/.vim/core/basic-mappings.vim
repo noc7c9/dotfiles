@@ -19,15 +19,17 @@ nnoremap ' `
 nnoremap ` '
 
 " navigation by default uses displayed lines rather than buffer lines
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
+" except if used with a count (count means jump to (relative) line number)
+nnoremap <expr> j v:count > 0 ? "j" : "gj"
+nnoremap <expr> k v:count > 0 ? "k" : "gk"
+xnoremap <expr> j v:count > 0 ? "j" : "gj"
+xnoremap <expr> k v:count > 0 ? "k" : "gk"
+
 " the reverse
 nnoremap gj j
 nnoremap gk k
-vnoremap gj j
-vnoremap gk k
+xnoremap gj j
+xnoremap gk k
 
 " make Y consistent with C and D (ie. don't include the newline)
 " note: not nnoremap because of vim-yankstack
