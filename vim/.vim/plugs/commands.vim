@@ -20,9 +20,6 @@ Plug 'sjl/gundo.vim'
 " silent! is necessary to avoid the 'opened buffer' messages
 noremap <silent> <leader>u :<c-u>silent! GundoToggle<cr>
 
-" pairs of handy bracket mappings
-Plug 'tpope/vim-unimpaired'
-
 " word manipulation commands
 " as well as case (eg: snake -> camel) changing mappings
 Plug 'tpope/tpope-vim-abolish'

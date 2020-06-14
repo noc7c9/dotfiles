@@ -35,22 +35,6 @@ xnoremap gk k
 " note: not nnoremap because of vim-yankstack
 nmap Y y$
 
-" swap lines up/down
-" TODO: add support for counts
-if env#is_mac()
-    nnoremap ∆ :<c-u>move+<cr>==
-    nnoremap ˚ :<c-u>move-2<cr>==
-
-    xnoremap ∆ :move'>+<cr>gv=gv
-    xnoremap ˚ :move-2<cr>gv=gv
-else
-    nnoremap <m-j> :<c-u>m+<cr>==
-    nnoremap <m-k> :<c-u>m-2<cr>==
-
-    xnoremap <m-j> :move'>+<cr>gv=gv
-    xnoremap <m-k> :move-2<cr>gv=gv
-endif
-
 " remap K keyword lookup
 nnoremap K <nop>
 vnoremap K <nop>
