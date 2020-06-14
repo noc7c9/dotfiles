@@ -1,13 +1,6 @@
 " adds :Bdelete command that closes buffers and files without changing layout
 Plug 'moll/vim-bbye'
 
-" alignment
-Plug 'junegunn/vim-easy-align'
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-" set fdm=manual while aligning so that folds aren't recalculated
-let g:easy_align_bypass_fold = 1
-
 " better join/split maps
 " use gJ/gS to join/split code from multiline to singleline and back
 Plug 'AndrewRadev/splitjoin.vim'
