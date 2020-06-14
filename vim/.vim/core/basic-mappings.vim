@@ -36,6 +36,7 @@ xnoremap gk k
 nmap Y y$
 
 " swap lines up/down
+" TODO: add support for counts
 if env#is_mac()
     nnoremap ∆ :<c-u>move+<cr>==
     nnoremap ˚ :<c-u>move-2<cr>==
