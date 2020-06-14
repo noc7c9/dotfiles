@@ -8,11 +8,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 " comment toggle maps
 Plug 'tpope/vim-commentary'
 
-" visualized undo tree
-Plug 'sjl/gundo.vim'
-" silent! is necessary to avoid the 'opened buffer' messages
-noremap <silent> <leader>u :<c-u>silent! GundoToggle<cr>
-
 " word manipulation commands
 " as well as case (eg: snake -> camel) changing mappings
 Plug 'tpope/tpope-vim-abolish'
