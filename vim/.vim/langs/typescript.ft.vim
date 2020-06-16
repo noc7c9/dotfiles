@@ -1,2 +1,2 @@
-" treat regular typescript the same as typescript.tsx
-set filetype=typescript.tsx
+" load the javascript.jsx rules
+execute 'source ' . expand('<sfile>:p:h') . '/javascript.ft.vim'
