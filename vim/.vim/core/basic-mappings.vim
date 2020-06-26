@@ -85,3 +85,7 @@ nnoremap S r<cr>
 " tab mappings that fit other programs
 nnoremap <c-tab> :tabnext<cr>
 nnoremap <c-s-tab> :tabprevious<cr>
+
+" setup "oo" to insert an empty line
+" (o is used as a prefix by custom wordmotion mappings)
+nnoremap oo o
