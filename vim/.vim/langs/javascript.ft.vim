@@ -47,3 +47,9 @@ if exists('g:loaded_commentary') && g:loaded_commentary
     augroup END
 
 endif
+
+" disable the buggy context sensitive commentstring functionality from
+" vim-jsx-pretty (via vim-polygot)
+augroup jsx_comment
+    autocmd!
+augroup END
