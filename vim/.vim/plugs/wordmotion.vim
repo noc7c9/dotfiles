@@ -11,22 +11,20 @@ let g:wordmotion_mappings = {
 \ 'gE' : '',
 \ }
 
-" Allow using the regular motions by prefixing with <leader>
-"
-" Note: ge is mapped as the motion conflicts with other mappings
-for s:motion in [ 'w', 'e', 'b' ]
+" Allow using the regular motions by prefixing/infixing with o (original)
+let s:modifier = 'o'
+for s:motion in [ 'w', 'e', 'b', 'ge' ]
     for s:mode in [ 'n', 'x', 'o' ]
-        if s:mode == 'n' && s:motion =~ '.w'
-            continue
-        endif
-        execute s:mode . 'noremap <silent>' '<leader>' . s:motion s:motion
+        execute s:mode . 'noremap <silent>' . s:modifier . s:motion s:motion
     endfor
 endfor
-" And aw and iw using a<leader>w and i<leader>w respectively
-xnoremap a<leader>w aw
-onoremap a<leader>w aw
-xnoremap i<leader>w iw
-onoremap i<leader>w iw
+for s:motion_prefix in [ 'a', 'i' ]
+    for s:mode in [ 'x', 'o' ]
+        let s:lhs = s:motion_prefix . s:modifier . 'w'
+        let s:rhs = s:motion_prefix . 'w'
+        execute s:mode . 'noremap <silent>' . s:lhs s:rhs
+    endfor
+endfor
 
 " Fix vim's inconsistent operator behaviour
 onoremap <silent> <leader>w :<c-u>normal! vwh<cr>
