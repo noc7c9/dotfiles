@@ -52,6 +52,7 @@ alias ya="yarn add"
 alias yad="yarn add -D"
 alias yr="yarn remove"
 alias yb="yarn build"
+alias yl="yarn lint"
 
 function y?() {
     local jqcmd
