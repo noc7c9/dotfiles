@@ -4,7 +4,6 @@ let b:ale_fixers = ['prettier']
 
 " enable syntax based folding
 setlocal foldmethod=syntax
-setlocal foldminlines=5
 setlocal foldnestmax=5
 
 " jsx context sensitive vim-commentary
