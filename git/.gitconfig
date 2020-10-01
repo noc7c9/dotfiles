@@ -13,6 +13,8 @@
     xa = commit -a
     d = diff
     ds = diff --staged
+    dnp = !git --no-pager diff
+    dsnp = !git --no-pager diff --staged
     last = show head
 
     # http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
