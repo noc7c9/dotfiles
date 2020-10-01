@@ -11,6 +11,7 @@ nnoremap <leader>g :Rg<space>
 autocmd filetype fzf tnoremap <buffer> <esc> i<esc>
 
 " disable the window movement mappings when in the fzf window
+" and map them to scroll instead (native fzf bindings)
 autocmd filetype fzf tnoremap <buffer> <c-j> <c-n>
 autocmd filetype fzf tnoremap <buffer> <c-k> <c-p>
 
