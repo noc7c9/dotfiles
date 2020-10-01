@@ -57,6 +57,7 @@ for dir in alpaca*/; do
         git branch -v | rg ahead -C 999999
     else
         green No
+        git branch -v
     fi
 
     cd - > /dev/null || exit 1
