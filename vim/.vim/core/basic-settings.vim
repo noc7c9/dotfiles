@@ -1,6 +1,9 @@
 " use syntax highlighting
 syntax enable
 
+" shortcut to fix syntax errors
+command! FixSyntax syntax sync fromstart
+
 " enable all filetype specific configuration
 filetype plugin indent on
 
