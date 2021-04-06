@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 # __STARTUP_START=$(date +%s%N)
 
 # command to reload bash config
