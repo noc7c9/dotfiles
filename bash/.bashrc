@@ -59,6 +59,17 @@ alias yr="yarn remove"
 alias yb="yarn build"
 alias yl="yarn lint"
 
+# Just shortcuts
+alias j="just"
+alias js="just start"
+alias jr="just run"
+alias jc="just check"
+alias jt="just test"
+alias jb="just build"
+alias jw="just watch"
+alias jtw="just watch test"
+alias jcw="just watch check"
+
 function y?() {
     local jqcmd
     local initial
