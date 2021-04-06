@@ -14,6 +14,8 @@ ll() { exa --all --classify --sort type --long "$@"; }
 lt() { l --tree "$@"; }
 llt() { ll --tree "$@"; }
 
+ls() { l "$@"; }
+
 # Misc shortcuts
 alias mkdir="mkdir -p"
 mkcd() { mkdir -p "$@"; cd "$@" || return; }
