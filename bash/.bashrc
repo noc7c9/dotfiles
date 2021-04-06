@@ -20,6 +20,7 @@ ls() { l "$@"; }
 alias mkdir="mkdir -p"
 mkcd() { mkdir -p "$@"; cd "$@" || return; }
 alias e="nvim"
+alias ediff="nvim -d"
 alias j="just"
 
 # Git shortcuts
